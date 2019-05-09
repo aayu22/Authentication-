@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Books API Example</title>
+    <style>
+      button[type="button"] {
+        border: 0;
+        color: white;
+        background: black;
+        padding: 10px 35px;
+        display: block;
+        margin: 5px auto;
+      }
+      body{
+        padding: 10px;
+      }
+      div{
+        padding: 20px;
+      }
+    </style>
+      
+  </head>
+  <body>
+    <!-- <div id="content"></div>
+    <script>
+      function handleResponse(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.text should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script> -->
+
+  <h1>BOOK FINDER</h1>
+  <input id="search" placeholder="Title or Author">
+  <br>
+  <br>
+  <br>
+  <button id="button1" type="button">Search for books!</button>
+  <br>
+  <div id="results"></div>
+  <script src="book.js"></script>
+  <a href="dashboard.html">
+    <button type="button">Go back to dashboard</button>
+  </a>
+  </body>
+</html>

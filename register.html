@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input[type="text"] 
+        {
+        padding: 3px;
+        text-align: center;
+        margin: 7px;
+        font-size: 18px;
+        }
+        button[type="submit"] {
+        border: 0;
+        color: white;
+        background: black;
+        padding: 10px 35px;
+        display: block;
+        margin: 5px auto;
+        }
+    </style>
+</head>
+<body>
+    <form formaction="http://127.0.0.1/db1/script.php" method="POST">
+        <input type="text" name="Name" placeholder="Your Name"><br>
+        <input type="text" name="Email" placeholder="Your Email"><br>
+        <input type="text" name="Username" placeholder="Your Username"><br>
+        <input type="text" name="Password" placeholder="Your Password"><br>
+        <button id="RegisterUser" type="submit" formaction="login.html">Sign Up!</button>    
+    </form>
+</body>
+</html>

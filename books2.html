@@ -1,0 +1,48 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Books Embedded Viewer API Example</title>
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <h1>BOOK FINDER</h1>
+    </head>
+<body>
+  <input id="search" placeholder="Enter Title or Author">
+  <button id="button" type="button">SEARCH!</button>
+    <div id="results"></div>
+    <script type="text/javascript">
+      google.books.load();
+    </script>
+    <script>
+      document.getElementById("button").addEventListener('click' , bookSearch, false);
+
+    function bookSearch() {
+    
+    var search = document.getElementById("search").value;
+    console.log(search);
+    
+
+    var request = new XMLHttpRequest();
+
+    request.open('GET', 'https://www.googleapis.com/books/v1/volumes?q='+ search , true)
+    request.onload = function(data) {
+  // Begin accessing JSON data here
+    var data = JSON.parse(this.response)
+
+    if (request.status >= 200 && request.status < 400) {
+        var item = data.items[1];
+        document.getElementById("results").innerHTML += "<br>" + item.volumeInfo.title;        
+    }
+  
+    else {
+        console.log('error')
+    }
+    }
+
+    request.send()
+
+    }
+</script>
+</body>
+</html>
