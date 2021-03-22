@@ -1,4 +1,4 @@
-# Authentication-
+
 
 Extensions are small software programs that customize the
 browsing experience. They enable users to tailor Chrome
